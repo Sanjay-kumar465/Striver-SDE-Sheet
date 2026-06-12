@@ -1,0 +1,25 @@
+class Solution {
+    public int findDuplicate(int[] nums) {
+        // int n=nums.length;
+        // int rep=0;
+        // for(int i=0;i<n;i++){
+        //     for(int j=i+1;j<n;j++){
+        //         if(nums[i]==nums[j]){
+        //            rep= nums[i];
+        //         }
+        //     }
+        // }
+        // return rep;
+        // above will fail beacuse of O(N^2) complexity so insteat use hash set
+        HashSet<Integer> set=new HashSet<>();
+        for(int n : nums){
+            if(set.contains(n)){
+                return n;
+            }
+            else{
+                set.add(n);            }
+        }
+        return 0;
+    }
+   
+}
